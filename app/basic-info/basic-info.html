@@ -1,0 +1,33 @@
+<div class="content-window" ng-controller="basicInfoController">
+    <div class="title-container">
+        <h1>Basic Information | Information Basique</h1>
+        <hr class="separator-long">
+    </div>
+    <div id="basicInfoContent">
+        <label class="input-container">
+            <input ng-model="firstName" placeholder=" " type="text">
+            <span class="label">First Name (nom)</span>
+            <span class="focus-bg"></span>
+        </label>
+
+        <label class="input-container">
+            <input ng-model="lastName" placeholder=" " type="text">
+            <span class="label">Last Name (prenom)</span>
+            <span class="focus-bg"></span>
+        </label>
+    </div>
+    <div class="dropdown" id="locationDropdown">
+        <button class="button-light dropdown-button">
+            Choose your city - Choisissez votre ville
+        </button>
+        <ul class="dropdown-content">
+            <li city="{{key}}" ng-click="setCity($event)" ng-repeat="(key, value) in cities">{{value.fullName}}</li>
+        </ul>
+    </div>
+    <hr class="separator-long">
+    <a class="continue-button" href="#!/book-page">
+        <button class="button-light">Continue - Continuez</button>
+    </a>
+
+
+</div>

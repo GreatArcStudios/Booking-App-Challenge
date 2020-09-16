@@ -1,0 +1,92 @@
+<div class="content-window" ng-controller="bookPageController">
+    <div class="title-container">
+        <h1>Booking | Réservation - {{currentCity.fullName}}</h1>
+        <p class="cost-description">Please note that weekend rates are ${{cost.weekend}} per hour, while the weekday
+            costs are ${{cost.weekday}} per hour.
+        </p>
+        <p class="cost-description">Veuillez noter que dans le weekend c'est ${{cost.weekend}} chaque heure, et dans
+            les jours de la semaine
+            c'est ${{cost.weekday}} chaque heure.
+        </p>
+        <hr class="separator-long">
+    </div>
+    <div id="bookPageContent">
+        <div id="bookingDetailsContainer">
+            <div class="bookPageSectContainer" id="fillLocation">
+                <div class="bookPageOut" id="fillLocOut">
+                    <p>Fill in your address - Remplissez votre address</p>
+                </div>
+                <div class="bookPageInner" id="fillLocInner">
+                    <label class="input-container">
+                        <input circle-bounds="{{mapBounds}}"
+                               class="form-control"
+                               component-restrictions="{country:'ca'}"
+                               details="details"
+                               ng-model="clientLocation"
+                               on-place-changed="placeChanged()"
+                               options="options"
+                               placeholder=" "
+                               places-auto-complete
+                               strict-bounds="true"
+                               type="text">
+                        <span class="label">Location</span>
+                        <span class="focus-bg"></span>
+                    </label>
+                </div>
+
+            </div>
+            <div class="bookPageSectContainer" id="fillDetails">
+                <div class="bookPageOut" id="fillDetailsOut">
+                    <p>Fill out details - Remplissez vos coordonnées</p>
+                </div>
+                <div class="bookPageInner" id="fillDetailsInner">
+                    <div id="fillDetailsDescription">
+                        <p>Fill out the hours you need, desired date, and desired time.</p>
+                        <p>Indiquez les heures dont vous avez besoin, la date souhaitée et l'heure souhaitée.</p>
+                    </div>
+                    <div id="bookingDetailsHoriz">
+                        <label class="input-container numerical-input">
+                            <input ng-init="null" ng-model="serviceHours" placeholder="Hrs/Hres" type="number">
+                        </label>
+                        <div class="input-container numerical-input"
+                             format="YYYY-MM-DD"
+                             moment-picker="ctrl.datepicker">
+                            <input class="form-control "
+                                   ng-model="ctrl.datepicker"
+                                   ng-model-options="{ updateOn: 'blur' }"
+                                   placeholder="Date">
+                        </div>
+                        <div class="input-container numerical-input"
+                             format="HH:mm"
+                             moment-picker="ctrl.timepicker"
+                             show-header="false"
+                        >
+                            <input class="form-control "
+                                   ng-model="ctrl.timepicker"
+                                   ng-model-options="{ updateOn: 'blur' }"
+                                   placeholder="Time\Temps"
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bookPageSectContainer" id="priceDetails">
+                <div class="bookPageOut" id="priceDetailsOut">
+                    <p>Total cost - Coût total</p>
+                </div>
+                <div class="bookPageInner" id="priceDetailsInner">
+                    <h2>{{name.first}}, your quote is/votre devis est: </h2>
+                    <h1>{{hoursNeeded ? hoursNeeded : 0}} × {{hourlyCost}} = {{totalCost}} dollars</h1>
+                </div>
+
+            </div>
+        </div>
+        <div id="bookingMap">
+            <ng-map center='{{currentCity.fullName}}' geo-fallback-center="[43.6532, 79.3832]" styles="{{mapStyle}}"
+                    zoom="15">
+                <marker icon="{path:'CIRCLE', scale: 7}" position="{{clientLocation}}"
+                        title="{{clientLocation}}"></marker>
+            </ng-map>
+        </div>
+    </div>
+</div>

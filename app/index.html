@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en" ng-app="bookingApp">
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <title>Booking App</title>
+  <meta content="" name="description">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link href="lib/html5-boilerplate/dist/css/normalize.css" rel="stylesheet">
+  <link href="lib/html5-boilerplate/dist/css/main.css" rel="stylesheet">
+  <link href="//cdn.rawgit.com/indrimuska/angular-moment-picker/master/dist/angular-moment-picker.min.css"
+        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700&display=swap"
+        rel="stylesheet">
+  <script src="lib/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+  <link href="app.css" rel="stylesheet">
+
+</head>
+<body ng-controller="appController"
+      ng-style="{'background':'url('+bgImage+') no-repeat top center', 'background-size':'cover'}">
+
+<div class="content-container" ng-view></div>
+
+<div class="overlay-bottom" id="footer">
+  <p>© Eric Zhu 2020</p>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.0/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-route/1.8.0/angular-route.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-animate/1.8.0/angular-animate.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment-with-locales.js"></script>
+<script src="//cdn.rawgit.com/indrimuska/angular-moment-picker/master/dist/angular-moment-picker.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?&key=AIzaSyDUp4v74IDYvfz-f_9GDRnnNBmLwHs6shU&libraries=places"></script>
+<script src="https://rawgit.com/allenhwkim/angularjs-google-maps/master/build/scripts/ng-map.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/ngmap@1.18.5/build/scripts/ng-map.min.js"></script>
+<script src="app.js"></script>
+<script src="basic-info/basic-info.js"></script>
+<script src="book-page/book-page.js"></script>
+<script src="core/version/version.js"></script>
+<script src="core/version/version-directive.js"></script>
+<script src="core/version/interpolate-filter.js"></script>
+
+</body>
+</html>
