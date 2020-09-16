@@ -9,6 +9,11 @@ input::-webkit-inner-spin-button {
     margin: 0;
 }
 
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 0.5; /* Firefox */
+}
+
 body {
     -webkit-transition: all .3s;
     transition: all .3s;
