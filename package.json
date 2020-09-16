@@ -5,27 +5,11 @@
   "description": "Booking App created for MoveMate intern challenge",
   "repository": "https://github.com/GreatArcStudios/Booking-App-Challenge",
   "license": "MIT",
-  "dependencies": {
-    "angular": "^1.7.5",
-    "angular-loader": "^1.7.5",
-    "angular-material": "^1.2.0",
-    "angular-messages": "^1.8.0",
-    "angular-route": "^1.7.5",
-    "html5-boilerplate": "0.0.1",
-    "ngmap": "^1.18.5"
-  },
   "devDependencies": {
-    "angular-mocks": "^1.7.5",
-    "cpx": "^1.5.0",
-    "http-server": "^0.11.1",
-    "jasmine-core": "^3.3.0",
-    "karma": "^3.1.1",
-    "karma-chrome-launcher": "^2.2.0",
-    "karma-firefox-launcher": "^1.1.0",
-    "karma-jasmine": "^1.1.2",
-    "protractor": "^5.4.1"
+    "http-server": "^0.11.1"
   },
   "scripts": {
+    "prestart": "npm install",
     "start": "http-server -a localhost -p 8000 -c-1 ./app"
   }
 }
